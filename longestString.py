@@ -8,8 +8,9 @@
 
 #phrase = 'abcpghrjshrklmnopqyjfhjehyopqrstuvwxyz'
 phrase = 'rtwuzksqbtkeqvddip'
-defaultString = ''
-longestString = ''
+
+phrase += " "
+defaultString = longestString = ''
 size = len(phrase) - 1
 
 for index in range(size):
@@ -23,17 +24,11 @@ for index in range(size):
     elif phrase[index] >= phrase[index-1]:
         defaultString += phrase[index]
         if len(defaultString) > len(longestString): 
-            longestString = defaultString   # If defaultString is longer than the longestString
-            defaultString = ''              # make it the longsetStriing. 
+            longestString = defaultString       # If defaultString is longer than the longestString
+            defaultString = ''                  # make it the longestStriing. 
         else:
-            defaultString = ''              # Otherwise, clear defaultString
+            defaultString = ''                  # Otherwise, clear defaultString
 if len(defaultString) >= len(longestString):    # Do a final check, in case second-to-last character
-    longestString = defaultString               # made defaultString longer than longestString
-
-# If the second-to-last string is in longsetString check to see if the second-to-last char is smaller than
-# the last char in phrase. If it is, add it to longestString. 
-if phrase[size-1] in longestString and phrase[size-1] < phrase[size]:
-    longestString += phrase[size]
-    
+    longestString = defaultString               # made defaultString longer than longestString    
     
 print("Final String: " + longestString)
