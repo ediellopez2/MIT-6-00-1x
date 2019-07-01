@@ -29,7 +29,7 @@ while (not(balance > -0.1 and balance < 0.1)):
 
      if (balance >= 0.1): # If the balance is greater than 10 cents, make the fixed monthly payment the new low.
           lowerBound = fixedMonthlyPayment
-     elif (balance <= -0.1): # If the balance is less than 10 cents, make the fixed monthly payment the new low.
+     elif (balance <= -0.1): # If the balance is less than 10 cents, make the fixed monthly payment the new high.
           upperBound = fixedMonthlyPayment
 
 print("Lowest Payment: ", round(fixedMonthlyPayment,2))
